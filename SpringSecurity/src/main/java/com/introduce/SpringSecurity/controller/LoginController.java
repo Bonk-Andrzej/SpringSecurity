@@ -19,16 +19,13 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/home")
-    public ModelAndView home() {
+    @GetMapping(value = {"/", "/login"})
+    public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.findUserByEmail(auth.getName());
-        modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-        modelAndView.addObject("adminMessage", "Content available only for registered users");
-        modelAndView.setViewName("admin/home");
+        modelAndView.setViewName("login");
         return modelAndView;
     }
+
 
     @GetMapping(value = "/registration")
     public ModelAndView registration() {
@@ -57,6 +54,18 @@ public class LoginController {
             modelAndView.setViewName("registration");
 
         }
+        return modelAndView;
+    }
+
+    @GetMapping(value = "/admin/home")
+    public ModelAndView home() {
+        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        modelAndView.addObject("userName", "Welcome " + user.getName() + " "
+                + user.getLastName() + " (" + user.getEmail() + ")");
+        modelAndView.addObject("adminMessage", "Content available only for registered users");
+        modelAndView.setViewName("admin/home");
         return modelAndView;
     }
 }
