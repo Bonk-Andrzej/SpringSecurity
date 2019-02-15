@@ -64,7 +64,7 @@ public class LoginController {
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("userName", "Welcome " + user.getName() + " "
                 + user.getLastName() + " (" + user.getEmail() + ")");
-        modelAndView.addObject("adminMessage", "Content available only for registered users");
+        modelAndView.addObject("adminMessage", "Content available only for registered users - congratulation!");
         modelAndView.setViewName("admin/home");
         return modelAndView;
     }
