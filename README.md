@@ -2,7 +2,7 @@
 Simple app for Spring Security learn purpose.
 
 #### Stack
-* Backend: Java 8, Spring Boot, Spring Security, H2, Lombok, Maven
+* Backend: REST API, Java 8, Spring Boot, Spring Security, H2, Lombok, Maven
 * Frontend: Thymeleaf, HTML, Css
 
 #### Features
