@@ -5,6 +5,13 @@ Simple app for Spring Security learn purpose.
 * Backend: Java 8, Spring Boot, Spring Security, H2, Lombok, Maven
 * Frontend: Thymeleaf, HTML, Css
 
+#### Features
+
+- [x] User registration  
+- [x] User login  
+- [x] Validation for incorrect registration ang logging 
+- [x] Logged in users are redirected to the appropriate content
+
 #### Examples of some features
 
 ![registration](img/security-registration.png)
@@ -23,12 +30,6 @@ $ cd backend && mvn clean install
 $ java -jar target/SpringSecurity-0.0.1-SNAPSHOT.jar
 ```
 
-#### Features
-
-- [x] User registration  
-- [x] User login  
-- [x] Validation for incorrect registration ang logging 
-- [x] Logged in users are redirected to the appropriate content
 
 
 
